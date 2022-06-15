@@ -47,6 +47,7 @@ public class PaymentController
     @GetMapping(value = "/payment/get/{id}")
     public CommonResult<Payment> getPaymentById(@PathVariable("id") Long id)
     {
+        log.info("==============8001");
         Payment payment = paymentService.getPaymentById(id);
 
         if(payment != null)
@@ -83,7 +84,11 @@ public class PaymentController
     public String paymentFeignTimeout()
     {
         // 业务逻辑处理正确，但是需要耗费3秒钟
-        try { TimeUnit.SECONDS.sleep(3); } catch (InterruptedException e) { e.printStackTrace(); }
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return serverPort;
     }
 
