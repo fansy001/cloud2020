@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
  * @create 2020-02-18 17:23
  */
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+@AllArgsConstructor //全参数构造方法
+@NoArgsConstructor //无参数构造方法
 public class CommonResult<T>
 {
     private Integer code;
