@@ -7,7 +7,8 @@ spring:
   cloud:
   #注册到zookeeper地址
     zookeeper:
-      connect-string: 192.168.111.144:2181
+      #这里的ip是linux服务器ip 端口2181是zookeeper的默认端口号  多个服务时和eureka一样地址用逗号“,”隔开
+      connect-string: 192.168.182.129:2181
 
 
 
