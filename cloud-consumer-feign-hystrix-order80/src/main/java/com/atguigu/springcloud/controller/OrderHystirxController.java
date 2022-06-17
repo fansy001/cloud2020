@@ -30,6 +30,11 @@ public class OrderHystirxController
         return result;
     }
 
+    /**
+     * 服务异常或者超时，做服务降级处理，降级的方案是 paymentInfo_TimeOutHandler 方法
+     * @param id
+     * @return
+     */
     @GetMapping("/consumer/payment/hystrix/timeout/{id}")
     @HystrixCommand(fallbackMethod = "paymentTimeOutFallbackMethod",commandProperties = {
             @HystrixProperty(name="execution.isolation.thread.timeoutInMilliseconds",value="1500")
@@ -37,7 +42,7 @@ public class OrderHystirxController
     //@HystrixCommand
     public String paymentInfo_TimeOut(@PathVariable("id") Integer id)
     {
-        int age = 10/0;
+       //int age = 10/0;
         String result = paymentHystrixService.paymentInfo_TimeOut(id);
         return result;
     }
