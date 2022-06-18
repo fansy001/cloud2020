@@ -12,6 +12,19 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 /**
+ *
+ * @DefaultProperties 注解
+ *      defaultFallback属性： 表示当请求的方法发生异常或超时或服务提供者宕机时，在请求方法上只是单纯的加了@HystrixCommand注解，该注解
+ *          没有配置fallbackMethod属性时，就执行defaultFallback属性指定的方法，去执行服务降级，
+ *          当配置了fallbackMethod属性时，就执行fallbackMethod属性指定的方法，去执行服务降级
+ *
+ * @HystrixCommand注解
+ *      fallbackMethod属性:当请求的方法发生异常或超时或服务提供者宕机后，去执行fallbackMethod属性指定的方法，去执行服务降级
+ *      commandProperties属性：通过@HystrixProperty注解的name和value配置相应的参数
+ *          @HystrixProperty
+ *              name:
+ *                  execution.isolation.thread.timeoutInMilliseconds 表示被@HystrixCommand注解标识的方法最大执行时间，超过该时间时就执行fallbackMethod属性指定的方法，去执行服务降级
+ *
  * @auther zzyy
  * @create 2020-02-20 11:57
  */
@@ -31,7 +44,7 @@ public class OrderHystirxController
     }
 
     /**
-     * 服务异常或者超时，做服务降级处理，降级的方案是 paymentInfo_TimeOutHandler 方法
+     * 服务异常或者超时，做服务降级处理，降级的方案是执行 paymentInfo_TimeOutHandler 方法
      * @param id
      * @return
      */

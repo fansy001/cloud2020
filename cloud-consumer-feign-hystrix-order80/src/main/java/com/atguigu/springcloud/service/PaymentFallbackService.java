@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
  * @auther zzyy
  * @create 2020-02-20 18:22
  */
-@Component
+@Component//注意这个注解不要忘记加 不要忘记 不要忘记
 public class PaymentFallbackService implements PaymentHystrixService
 {
     @Override
