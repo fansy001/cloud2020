@@ -23,7 +23,7 @@ import javax.annotation.Resource;
  *      commandProperties属性：通过@HystrixProperty注解的name和value配置相应的参数
  *          @HystrixProperty
  *              name:
- *                  execution.isolation.thread.timeoutInMilliseconds 表示被@HystrixCommand注解标识的方法最大执行时间，超过该时间时就执行fallbackMethod属性指定的方法，去执行服务降级
+ *                  execution.isolation.thread.timeoutInMilliseconds 表示被@HystrixCommand注解标识的方法最大执行时间，超过该时间时就执行fallbackMethod属性指定的方法，去执行服务降级,默认值1秒钟
  *
  * @auther zzyy
  * @create 2020-02-20 11:57
