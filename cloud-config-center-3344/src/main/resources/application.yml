@@ -8,10 +8,11 @@ spring:
     config:
       server:
         git:
-          uri: git@github.com:zzyybs/springcloud-config.git #GitHub上面的git仓库名字
+          #uri: git@github.com:fansy001/cloud2020-config.git #GitHub上面的git仓库名字
+          uri: https://github.com/fansy001/cloud2020-config.git #GitHub上面的git仓库名字   #用户名密码：fansy001/Fansy8933436266
         ####搜索目录
           search-paths:
-            - springcloud-config
+            - cloud2020-config
       ####读取分支
       label: master
 #rabbitmq相关配置
@@ -33,5 +34,4 @@ management:
     web:
       exposure:
         include: 'bus-refresh'
-
 
