@@ -14,7 +14,7 @@
 
 
     <dependencies>
-        <!--SpringCloud ailibaba nacos -->
+        <!--SpringCloud ailibaba nacos 服务注册中心 -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
